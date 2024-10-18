@@ -1,5 +1,8 @@
 .social {
-    display: flex;
+    display: none;
+@media screen and (min-width: 768px) {
+    display: flex;    
+}
 }
 
 .social__item {
@@ -8,6 +11,10 @@
     &:not(:last-child) {
         margin-right: 12px;
     }
+@media screen and (min-width: 768px) {
+    width: 44px;
+    height: 44px;
+}
 }
 
 .social__link {
@@ -38,4 +45,8 @@
     width: 20px;
     height: 20px;
     fill: currentColor;
+@media screen and (min-width: 768px) {
+    width: 28px;
+    height: 28px;
+}
 }
