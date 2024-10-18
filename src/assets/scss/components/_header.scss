@@ -1,7 +1,9 @@
 .page-header__container{
+@media screen and (min-width: 768px) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 }
 .menu__logo{
     font-size: 16px;
@@ -14,8 +16,26 @@
     line-height: 28px;
 }
 }
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+@media screen and (min-width: 768px) {
+    display: block;
+}
+}
 .menu__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+@media screen and (min-width: 768px) {
     display: none;
+}
+}
+.menu__icon{
+    width: 32px;
+    height: 16px;
 }
 .navigation{
     display: none;
@@ -41,6 +61,5 @@
     border-radius: 30px;
     background-color: var(--firstBgColor);
     color: var(--secondFontColor);
-
 }
 }
