@@ -17,11 +17,13 @@
     background-repeat: no-repeat;
     width: 335px;
     height: 387px;
-@media screen and (min-device-pixel-ratio: 2),
-       screen and (min-resolution: 192dpi),
-       screen and (min-resolution: 2dppx) {
+@media screen and (min-width: 1px) {
+   @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
     background-image: url('/img/mobile/hero-mobile@2x.png');
     background-size: contain;
+} 
 }
 @media screen and (min-width: 768px) {
     background-image: url('/img/tablet/hero-tablet@1x.png');
