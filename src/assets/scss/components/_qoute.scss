@@ -1,0 +1,122 @@
+.quote{
+    margin: 20px 0;
+}
+.quote__wrapper{
+@media screen and (min-width: 1440px) {
+    display: flex;    
+}
+}
+.quote__container{
+    position: relative;
+    width: 100%;
+    padding: 40px 20px;
+    border-radius: 30px;
+    background-color: var(--accentColor);
+@media screen and (min-width: 768px) {
+    padding: 64px 80px;
+}
+@media screen and (min-width: 1440px) {
+    padding: 64px;
+    width: 704px;
+}
+}
+.quote__icon--wrap{
+    display: flex;
+    align-items: center;
+}
+.quote__man{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 32px;
+    padding: 6px 7px;
+    border-radius: 100px;
+    background-color:rgba(246, 246, 246, 0.1);;
+}
+.quote__title{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    margin-left: 12px;
+@media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 32px;
+    margin-left: 16px;
+}
+}
+.quote__inverted-qoutes--icon{
+    position: absolute;
+    top: 40px;
+    left: 287px;
+    width: 28px;
+    height: 28px;
+@media screen and (min-width: 768px) {
+    top: 32px;
+    left: 608px;
+    width: 48px;
+    height: 48px;
+}
+@media screen and (min-width: 1440px) {
+    top: 32px;
+    left: 592px;
+}
+}
+.quote__man--icon{
+    width: 18px;
+    height: 20px;
+}
+.quote__text {
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(246, 246, 246, 0.6);
+    margin: 14px 0;
+    padding-left: 44px;
+@media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+    padding-left: 50px;
+    margin: 16px 0px 25px;
+}
+}
+.quote__author {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    padding-left: 44px;
+@media screen and (min-width: 768px) {
+    padding-left: 50px;
+}
+}
+.quote__bg--img{
+    background-image: url('/img/mobile/quote-mobile@1x.png');
+    width: 335px;
+    height: 272px;
+@media screen and (min-width: 1px) {
+   @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url('/img/mobile/quote-mobile@2x.png');
+    background-size: contain;
+} 
+}
+@media screen and (min-width: 768px) {
+    background-image: url('/img/tablet/quote-tablet@1x.png');
+    width: 736px;
+    height: 302px;
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url('/img/tablet/quote-tablet@2x.png');
+    }
+}
+@media screen and (min-width: 1440px) {
+    background-image: url('/img/desktop/quote-desktop@1x.png');
+    width: 704px;
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+        background-image: url('/img/desktop/quote-desktop@2x.png');
+    }
+}
+}
