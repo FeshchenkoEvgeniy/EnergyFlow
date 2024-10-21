@@ -1,0 +1,101 @@
+.recommendations{
+    margin: 20px 0;
+@media screen and (min-width: 768px) {
+    margin: 16px 0;
+}
+.recommendations__wrapper{
+@media screen and (min-width: 1440px) {
+    display: flex;
+    align-items: center;
+}
+}
+}
+.recommendations__img-bg{
+    background-image: url('/img/mobile/110min-mobile@1x.png');
+    width: 335px;
+    height: 269px;
+@media screen and (min-width: 1px) {
+    @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+            background-image: url('/img/mobile/110min-mobile@2x.png');
+            background-size: contain;
+        }
+    }
+@media screen and (min-width: 768px) {
+    background-image: url('/img/tablet/110min-tablet@1x.png');
+    width: 736px;
+    height: 302px;
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+        background-image: url('/img/tablet/110min-tablet@2x.png');
+        background-size: contain;
+    }
+}
+@media screen and (min-width: 1440px) {
+    background-image: url('/img/desktop/110min-desktop@1x.png');
+    width: 704px;
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+        background-image: url('/img/desktop/110min-desktop@2x.png');
+        background-size: contain;
+    }
+}
+}
+.recommendations__container--wrap{
+    display: flex;
+    align-items: baseline;
+    background-color: #1B1B1B;
+    border-radius: 30px;
+    padding: 40px 20px;
+@media screen and (min-width: 768px) {
+    border-radius: 50px;
+    padding: 64px;
+}
+}
+.recommendations__dumbbell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(246, 246, 246, 0.1);
+    border-radius: 100px;
+    padding: 10px 8px;
+    margin-right: 16px;
+}
+.recommendations__dumbbell--icon{
+    width: 16px;
+    height: 12px;
+}
+.recommendations__title{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+@media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 32px;
+}
+}
+.recommendations__pretitle{
+    margin-bottom: 14px;
+    margin-top: 2px;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(246, 246, 246, 0.6);
+@media screen and (min-width: 768px) {
+    margin-bottom: 25px;
+}
+}
+.recommendations__description{
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(246, 246, 246, 0.6);
+@media screen and (min-width: 768px) {
+    width: 526px;
+    font-size: 16px;
+    line-height: 24px;
+} 
+}
