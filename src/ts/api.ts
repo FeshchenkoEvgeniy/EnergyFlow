@@ -1,3 +1,5 @@
+import {IFilter} from './interface'
+
 const BASE_URL = 'https://energyflow.b.goit.study/api';
 
 async function fetchQuote() {
@@ -12,4 +14,16 @@ async function fetchQuote() {
     return response
 }
 
-export {fetchQuote}
+async function fetchExercises({filterName, page}:IFilter) {
+    const response = fetch(`${BASE_URL}/filters?filter=${filterName}&page=${page}&limit=${12}`)
+        .then(resp => {
+        if (!resp.ok) {
+            throw new Error(`${resp.statusText}`);
+        }
+            return resp.json()
+        })
+        .catch(err => console.log(err))
+    return response
+}
+
+export {fetchQuote, fetchExercises}
