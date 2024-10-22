@@ -1,5 +1,8 @@
 .quote{
     margin: 20px 0;
+@media screen and (min-width: 768px) {
+    margin: 16px 0;
+}
 }
 .quote__wrapper{
 @media screen and (min-width: 1440px) {
@@ -14,6 +17,7 @@
     background-color: var(--accentColor);
 @media screen and (min-width: 768px) {
     padding: 64px 80px;
+    border-radius: 50px;
 }
 @media screen and (min-width: 1440px) {
     padding: 64px;
