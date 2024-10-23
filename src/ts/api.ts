@@ -14,8 +14,8 @@ async function fetchQuote() {
     return response
 }
 
-async function fetchExercises({filterName, page}:IFilter) {
-    const response = fetch(`${BASE_URL}/filters?filter=${filterName}&page=${page}&limit=${12}`)
+async function fetchExercises({filterName, currentPage}:IFilter) {
+    const response = fetch(`${BASE_URL}/filters?filter=${filterName}&page=${currentPage}&limit=${12}`)
         .then(resp => {
         if (!resp.ok) {
             throw new Error(`${resp.statusText}`);
