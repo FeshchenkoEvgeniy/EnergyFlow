@@ -1,4 +1,4 @@
-import { fetchExercises } from "./api";
+import { fetchFilterExercises } from "./api";
 import { createMarkupForExercises, createMarkupForExercisesPagination } from "./createMarkup";
 import { IFilter,} from './interface'
 
@@ -35,7 +35,7 @@ function onClick(evt: Event) {
 renderMarkup()
 
 function renderMarkup() {
-    fetchExercises(initialFilter)
+    fetchFilterExercises(initialFilter)
     .then(({totalPages, results}) => {
         exercisesList.innerHTML = createMarkupForExercises(results)
 
