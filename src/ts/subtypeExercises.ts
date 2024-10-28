@@ -6,7 +6,11 @@ const exercisesList = document.querySelector('.js-exercises__list') as HTMLEleme
 
 function onClick(evt: Event) {
     const target = evt.target as HTMLElement;
+
     exercisesList.style.display = 'none'
+    subtypeExercisesList.style.display = 'flex'
+
+    console.log(exercisesList.style.display)
 
     if (target.classList.contains('exercises__list')) {
         return
