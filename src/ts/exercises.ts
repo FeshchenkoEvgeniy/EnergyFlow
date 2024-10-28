@@ -4,6 +4,7 @@ import { IFilter,} from './interface'
 
 const filterBtn = document.querySelector('.js-filterBtn') as HTMLElement
 const exercisesList = document.querySelector('.js-exercises__list') as HTMLElement;
+const subtypeExercisesList = document.querySelector('.js-subtype-exercises__list') as HTMLElement
 const paginationList = document.querySelector('.js-exercises__pagaination') as HTMLElement
 const buttons = document.querySelectorAll('.filter__btn') as NodeListOf<HTMLButtonElement>;
 
@@ -17,6 +18,9 @@ let paginationBtns: NodeListOf<HTMLButtonElement>;
 
 function onClick(evt: Event) {
     const target = evt.target as HTMLElement;
+
+    exercisesList.style.display = 'flex'
+    subtypeExercisesList.style.display = 'none'
 
     if (!target.classList.contains('filter__btn')) {
         return
