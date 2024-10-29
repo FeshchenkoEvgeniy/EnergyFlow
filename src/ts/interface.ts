@@ -1,6 +1,7 @@
 interface IFilter{
     filterName: string,
-    currentPage: string
+    exercises: string,
+    currentPage: string,
 }
 
 interface IExerciseFilter{
