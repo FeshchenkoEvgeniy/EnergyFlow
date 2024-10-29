@@ -1,28 +1,18 @@
-import { fetchSubtypeExercises } from "./api";
-import { createMarkupForSubtypeExercises } from "./createMarkup";
+import { renderMarkup } from "./pagination";
 
-const subtypeExercisesList = document.querySelector('.js-subtype-exercises__list') as HTMLElement
 const exercisesList = document.querySelector('.js-exercises__list') as HTMLElement;
 
 function onClick(evt: Event) {
     const target = evt.target as HTMLElement;
-
-    exercisesList.style.display = 'none'
-    subtypeExercisesList.style.display = 'flex'
-
-    console.log(exercisesList.style.display)
+    const listType = 'subtypeExercises'
 
     if (target.classList.contains('exercises__list')) {
         return
     }
     const exercisesItem = target.closest('.exercises__item') as HTMLElement
     const { filtername = 'muscles', exercise='calves'} = exercisesItem.dataset
-
-    fetchSubtypeExercises(filtername, exercise)
-    .then(({ results }) => {
-        subtypeExercisesList.innerHTML = createMarkupForSubtypeExercises(results)
-    })
-    .catch(err => console.log(err))
+    
+    renderMarkup(listType, filtername, exercise)
 }
 
 exercisesList.addEventListener('click', onClick)
