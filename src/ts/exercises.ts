@@ -3,6 +3,7 @@ import { renderMarkup } from "./pagination";
 
 const filterBtn = document.querySelector('.js-filterBtn') as HTMLElement
 const buttons = document.querySelectorAll('.filter__btn') as NodeListOf<HTMLButtonElement>;
+const exerciseTitle = document.querySelector('.js-exercises__title') as HTMLElement;
 
 export const initialFilter: IFilter = {
     filterName: 'Muscles',
@@ -26,6 +27,8 @@ function onClick(evt: Event) {
     buttons.forEach(btn => btn.classList.remove('filter__btn--active'))
     target.classList.add('filter__btn--active')
     
+    exerciseTitle.innerHTML = 'Exercises'
+
     renderMarkup(listType, initialFilter.filterName, initialFilter.exercises)
 }
 
