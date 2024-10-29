@@ -26,7 +26,7 @@ async function fetchFilterExercises({filterName, currentPage}:IFilter) {
     return response
 }
 
-async function fetchSubtypeExercises(filtername: string, exercise: string) {
+async function fetchSubtypeExercises(filtername: string, exercise: string, currentPage: string) {
     let newFilterName: string = ''
     if (filtername === 'body parts' && filtername.endsWith('s')) {
         const joinedFilterName = filtername.split(' ').join('')
@@ -34,7 +34,7 @@ async function fetchSubtypeExercises(filtername: string, exercise: string) {
     } else {
         newFilterName = filtername
     }
-    const response = fetch(`${BASE_URL}/exercises?${newFilterName}=${exercise}&page=1&limit=12`)
+    const response = fetch(`${BASE_URL}/exercises?${newFilterName}=${exercise}&page=${currentPage}&limit=12`)
         .then(resp => {
         if (!resp.ok) {
             throw new Error(`${resp.statusText}`);
