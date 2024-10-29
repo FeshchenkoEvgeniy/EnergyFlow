@@ -9,7 +9,7 @@
 }
 .subtype-exercises__item{
     width: 100%;
-    height: 165px;
+    min-height: 165px;
     border-radius: 15px;
     background-color: var(--firstBgColor);
     padding: 16px;
@@ -18,7 +18,7 @@
 }
 @media screen and (min-width: 1440px) {
     width: 424px;
-    height: 141px;
+    min-height: 141px;
 }
 }
 .subtype-exercises__layout{
