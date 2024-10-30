@@ -30,6 +30,9 @@
 .filter__wrapper{
     margin: 20px 0px 40px;
 @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin: 32px 0px;
 }
 }
@@ -55,6 +58,47 @@
 &:focus{
     background-color: var(--accentColor);
     color: var(--firstFontColor);
+}
+}
+.search-container {
+    display: none;
+    position: relative;
+    margin-top: 20px;
+@media screen and (min-width: 768px) {
+    margin-top: 0;
+    margin-left: auto;
+}
+}
+.filter__search-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: inherit;
+}
+.filter__search{
+    width: 295px;
+    height: 42px;
+    padding: 12px 25px 12px 14px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    background-color: #F6F6F6;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: var(--secondFontColor);
+&::placeholder{
+    color: var(--secondFontColor);
+}
+@media screen and (min-width: 768px) {
+    width: 246px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 24px;
+}
+@media screen and (min-width: 1440px) {
+    width: 273px;
 }
 }
 .exercises__list{
