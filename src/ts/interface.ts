@@ -19,10 +19,14 @@ interface ISubtypeExercise{
     bodyPart: string,
     burnedCalories: number,
     name: string,
+    description: string,
     rating: number,
     target: string,
     time: number,
-    _id: string
+    popularity: number,
+    gifUrl: string,
+    equipment: string,
+    _id: string,
 }
 
 export type {IFilter, IResultExercises, IExerciseFilter, ISubtypeExercise}
