@@ -45,4 +45,16 @@ async function fetchSubtypeExercises(filtername: string, exercise: string, curre
     return response
 }
 
-export {fetchQuote, fetchFilterExercises, fetchSubtypeExercises}
+async function fetchSubtypeExercisesById(id: string) {
+    const response = fetch(`${BASE_URL}/exercises/${id}`)
+        .then(resp => {
+        if (!resp.ok) {
+            throw new Error(`${resp.statusText}`);
+        }
+            return resp.json()
+        })
+        .catch(err => console.log(err))
+    return response 
+}
+
+export {fetchQuote, fetchFilterExercises, fetchSubtypeExercises, fetchSubtypeExercisesById}
