@@ -19,16 +19,16 @@ function createMarkupForExercisesPagination(totalPages: number) {
     return str
 }
 
-function createMarkupForSubtypeExercises(results: ISubtypeExercise[]) {
+function createMarkupForSubtypeExercises(results: ISubtypeExercise[]): string {
     return results.map(({ bodyPart, burnedCalories, name, rating, target, time, _id }: ISubtypeExercise) => {
         return `
-        <li class="subtype-exercises__item" data-id="${_id}">
+        <li class="subtype-exercises__item js-subtype-exercises__item" data-id="${_id}">
   <div class="subtype-exercises__layout">
     <p class="subtype-exercises__workout">WORKOUT</p>
     <p class="subtype-exercises__rating">${Math.round(rating)}.0 <svg width="18" height="18" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M6.04894 0.927052C6.3483 0.0057416 7.6517 0.00574088 7.95106 0.927052L8.79611 3.52786C8.92999 3.93989 9.31394 4.21885 9.74717 4.21885H12.4818C13.4505 4.21885 13.8533 5.45846 13.0696 6.02786L10.8572 7.63525C10.5067 7.8899 10.3601 8.34127 10.494 8.75329L11.339 11.3541C11.6384 12.2754 10.5839 13.0415 9.80017 12.4721L7.58779 10.8647C7.2373 10.6101 6.7627 10.6101 6.41222 10.8647L4.19983 12.4721C3.41612 13.0415 2.36164 12.2754 2.66099 11.3541L3.50604 8.75329C3.63992 8.34127 3.49326 7.8899 3.14277 7.63525L0.930391 6.02787C0.146677 5.45846 0.549452 4.21885 1.51818 4.21885H4.25283C4.68606 4.21885 5.07001 3.93989 5.20389 3.52786L6.04894 0.927052Z" fill="#EEA10C"/>
 </svg></p>
-    <button class="subtype-exercises__btn">
+    <button class="subtype-exercises__btn js-subtype-exercises__btn">
       Start
       <svg
         width="14"
@@ -84,7 +84,56 @@ function createMarkupForSubtypeExercises(results: ISubtypeExercise[]) {
     }).join('')
 }
 
+function createMarkupForSubtypeExercisesModal({ bodyPart, burnedCalories, description, equipment, gifUrl, name, popularity, rating, target, time, _id}: ISubtypeExercise): string {
+  return `
+    <div class="modal" data-id='${_id}'>
+  <button class="modal-close js-modal-close">x</button>
+  <img src="${gifUrl}" alt="${name}" class="modal-gif" />
+  <div class="modal-box">
+    <h3 class="modal-title">${name}</h3>
+    <p class="modal-rating">${Math.round(rating)}.0</p>
+    <div class="modal-detail__container">
+      <p class="modal-detail__text">
+        Target<span class="modal-detail__dynamic-text">${target}</span>
+      </p>
+      <p class="modal-detail__text">
+        Body Part<span class="modal-detail__dynamic-text">${bodyPart}</span>
+      </p>
+      <p class="modal-detail__text">
+        Equipment<span class="modal-detail__dynamic-text">${equipment}</span>
+      </p>
+      <p class="modal-detail__text">
+        Popular<span class="modal-detail__dynamic-text">${popularity}</span>
+      </p>
+      <p class="modal-detail__text">
+        Burned Calories<span class="modal-detail__dynamic-text">${burnedCalories}/${time} min</span>
+      </p>
+    </div>
+    <p class="modal-description">${description}</p>
+    <button class="modal-favorite js-modal-favorite">
+      Add to favorites
+      <svg
+        width="18"
+        height="16"
+        viewBox="0 0 18 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15.6306 2.45753C15.2475 2.07428 14.7927 1.77026 14.2921 1.56284C13.7915 1.35542 13.2549 1.24866 12.7131 1.24866C12.1712 1.24866 11.6347 1.35542 11.1341 1.56284C10.6335 1.77026 10.1786 2.07428 9.79558 2.45753L9.00058 3.25253L8.20558 2.45753C7.43181 1.68376 6.38235 1.24906 5.28808 1.24906C4.1938 1.24906 3.14435 1.68376 2.37058 2.45753C1.59681 3.2313 1.16211 4.28075 1.16211 5.37503C1.16211 6.4693 1.59681 7.51876 2.37058 8.29253L3.16558 9.08753L9.00058 14.9225L14.8356 9.08753L15.6306 8.29253C16.0138 7.90946 16.3178 7.45464 16.5253 6.95404C16.7327 6.45345 16.8394 5.91689 16.8394 5.37503C16.8394 4.83316 16.7327 4.2966 16.5253 3.79601C16.3178 3.29542 16.0138 2.84059 15.6306 2.45753Z"
+          stroke="#F6F6F6"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <button class="modal-rating js-modal-rating">Give a rating</button>
+  </div>
+</div>
+  `
+}
 
-export { createMarkupForExercises, createMarkupForExercisesPagination, createMarkupForSubtypeExercises}
+export { createMarkupForExercises, createMarkupForExercisesPagination, createMarkupForSubtypeExercises, createMarkupForSubtypeExercisesModal}
 
     
