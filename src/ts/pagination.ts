@@ -6,6 +6,7 @@ const exercisesList = document.querySelector('.js-exercises__list') as HTMLEleme
 const subtypeExercisesList = document.querySelector('.js-subtype-exercises__list') as HTMLElement
 const paginationList = document.querySelector('.js-exercises__pagaination') as HTMLElement
 
+
 let paginationBtns: NodeListOf<HTMLButtonElement>;
 
 let currentListType: 'exercises' | 'subtypeExercises' = 'exercises';
@@ -32,7 +33,7 @@ export function renderMarkup(listType: string, filtername:string, exercise:strin
         currentListType = listType
             
         subtypeExercisesList.innerHTML = createMarkupForSubtypeExercises(results)
-            
+
         toggleStylesExercises(listType)
         updatePagination(totalPages)
     })
