@@ -5,6 +5,7 @@ const exerciseTitle = document.querySelector('.js-exercises__title') as HTMLElem
 const searchContainer = document.querySelector('.search-container') as HTMLElement
 const searchBtn = document.querySelector('.js-filter__search-btn') as HTMLElement
 
+
 let filterName:string;
 const listType = 'subtypeExercises'
 
