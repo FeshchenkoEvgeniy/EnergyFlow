@@ -1,3 +1,4 @@
+import { initialFilter } from "./exercises";
 import { renderMarkup } from "./pagination";
 
 const exercisesList = document.querySelector('.js-exercises__list') as HTMLElement;
@@ -29,7 +30,9 @@ function onClick(evt: Event) {
 
 function handleSearchClick() {
     const searchInput = document.querySelector('.js-filter__search') as HTMLInputElement
-    const query = searchInput.value.trim();
+    const query = searchInput.value.trim().toLowerCase();
+    exerciseTitle.innerHTML = `Exercises / <span class='exercises__title--subtype'>${query.charAt(0).toUpperCase() + query.slice(1)}</span>`
+    initialFilter.currentPage = '1'
     if (query.length) {
         renderMarkup(listType, filterName, query)
     }
