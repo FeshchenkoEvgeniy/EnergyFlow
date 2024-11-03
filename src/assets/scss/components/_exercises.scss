@@ -151,10 +151,11 @@
     color: rgba(246, 246, 246, 0.4);
 }
 .pagination__list{
-    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
+    margin-top: 20px;
     gap: 8px;
 }
 .pagination__btn{
@@ -183,4 +184,29 @@
     font-size: 24px;
     line-height: 32px;
 }
+}
+.exercises__not-found{
+    display: none;
+    justify-content: center;
+    margin: 153px 0px 185px;
+}
+.exercises__not-found-description{
+    width: 295px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: var(--secondFontColor);
+@media screen and (min-width: 768px) {
+    width: 536px;
+    font-size: 18px;
+    line-height: 24px;
+}
+@media screen and (min-width: 1440px) {
+    width: 684px;
+}
+}
+.exercises__not-found-description--accent{
+    color: var(--accentColor);
 }
