@@ -5,7 +5,7 @@ import { initialFilter } from "./exercises";
 const exercisesList = document.querySelector('.js-exercises__list') as HTMLElement;
 const subtypeExercisesList = document.querySelector('.js-subtype-exercises__list') as HTMLElement
 const paginationList = document.querySelector('.js-exercises__pagaination') as HTMLElement
-
+const notFoundContainer = document.querySelector('.js-exercises__not-found') as HTMLElement
 
 let paginationBtns: NodeListOf<HTMLButtonElement>;
 
@@ -31,8 +31,16 @@ export function renderMarkup(listType: string, filtername:string, exercise:strin
         initialFilter.exercises = exercise    
         
         currentListType = listType
-            
-        subtypeExercisesList.innerHTML = createMarkupForSubtypeExercises(results)
+
+        if (results.length) {
+            subtypeExercisesList.innerHTML = createMarkupForSubtypeExercises(results)
+            notFoundContainer.style.display = 'none'
+            paginationList.style.display = 'flex'
+        } else {
+            subtypeExercisesList.innerHTML = ''
+            notFoundContainer.style.display = 'flex'
+            paginationList.style.display = 'none'
+        }    
 
         toggleStylesExercises(listType)
         updatePagination(totalPages)
