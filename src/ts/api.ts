@@ -57,4 +57,30 @@ async function fetchSubtypeExercisesById(id: string) {
     return response 
 }
 
-export {fetchQuote, fetchFilterExercises, fetchSubtypeExercises, fetchSubtypeExercisesById}
+async function subscriptionToNewExercises(email: string) {
+    const options = {
+    method: 'POST',
+    body: JSON.stringify({email}),
+    headers: {
+        "Content-Type": "application/json; charset=UTF-8"
+    }
+    }
+
+    try {
+        const response = await fetch(`${BASE_URL}/subscription`, options);
+
+        if (response.status === 409) {
+            const errorData = await response.json();
+            throw new Error(errorData.message);
+        }
+
+        if (!response.ok) {
+            throw new Error(`Error ${response.status}: ${response.statusText}`);
+        }
+        return await response.json();
+    } catch (error) {
+        throw error;
+    }
+}
+
+export {fetchQuote, fetchFilterExercises, fetchSubtypeExercises, fetchSubtypeExercisesById,subscriptionToNewExercises}
