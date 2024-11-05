@@ -1,18 +1,18 @@
-const modalBackdrop = document.querySelector('.js-backdrop') as HTMLElement 
-const ratingModal = document.querySelector('.js-rating-modal') as HTMLElement
-const modal = document.querySelector('.js-modal') as HTMLElement;
-const ratingContainer = document.querySelector('.js-rating-modal__container') as HTMLElement
-const ratingText = document.querySelector('.js-rating-modal__text') as HTMLElement
-const inputElements = document.querySelectorAll('.rating-modal__input');
+import { sendFeedbackExercisesById } from "./api";
+
+const ratingForm = document.querySelector('.js-rating-form') as HTMLFormElement;
+const ratingText = document.querySelector('.js-rating-modal__text') as HTMLElement;
+const inputRatingElements = document.querySelectorAll('.rating-modal__input') as NodeListOf<HTMLInputElement>;
+
 
 let rating:string = '0'
 
-function addToFavoriteAndGiveRating(evt: Event) {
+
+export function addToFavoriteAndGiveRating(evt: Event) {
     const target = evt.target as HTMLElement;
 
     if (target.classList.contains('js-modal-favorite')) {
-
-    const modal = target.closest('.modal') as HTMLElement;
+    const modal = target.closest('.favorite-modal') as HTMLElement;
     const exerciseId = modal.dataset.id || '64f389465ae26083f39b1b4a'
         
     const favoriteId = JSON.parse(localStorage.getItem('favorite') || '[]')
@@ -26,12 +26,8 @@ function addToFavoriteAndGiveRating(evt: Event) {
     } else {
         Notiflix.Notify.failure('The exercise has already been added to your favorites') 
     }
-    } else if (target.classList.contains('js-modal-rating')) {
-        ratingModal.classList.remove('rating-modal--hidden')
-        modal.style.display = 'none'
-    }
+    } 
 }
-
 
 function chooseRating(evt: Event) {
     const target = evt.target as HTMLInputElement
@@ -42,20 +38,42 @@ function chooseRating(evt: Event) {
 }
 
 export function checkedRatingInputs() {
-    let isChecked = false;
-inputElements.forEach(input => {
-    if (input.checked) {
-        input.style.fill = 'rgba(27, 27, 27, 0.2);'
-        isChecked = true;
+    ratingText.innerHTML = `0.0`
+    
+    inputRatingElements.forEach(input => {
+        input.checked = false;
+    });
+
+}
+
+
+function sendFeedback(evt: Event) {
+    evt.preventDefault();
+
+    const target = evt.target as HTMLFormElement
+    const { userEmail, userResponse } = target;
+
+    const modal = document.querySelector('.favorite-modal') as HTMLElement;
+    const exerciseId = modal.dataset.id || '64f389465ae26083f39b1b4a'
+
+    if (userEmail.value.trim() && userResponse.value.trim()) {
+        sendFeedbackExercisesById(exerciseId, userEmail.value, userResponse.value, rating)
+    } else {
+        Notiflix.Notify.failure('Please fill in all fields') 
     }
+    
+    userEmail.value = ''
+    userResponse.value = ''
+    checkedRatingInputs()
+}
+
+inputRatingElements.forEach(input => {
+    input.addEventListener('change', chooseRating);
 });
 
-if (isChecked) {
-    console.log('Принаймні один інпут включений');
-} else {
-    console.log('Всі інпуты не включені');
-}
+if (!ratingForm.hasAttribute('data-submit-listener')) {
+    ratingForm.addEventListener('submit', sendFeedback);
+    ratingForm.setAttribute('data-submit-listener', 'true');
 }
 
-ratingContainer.addEventListener('click', chooseRating)
-modalBackdrop.addEventListener('click', addToFavoriteAndGiveRating)
+
