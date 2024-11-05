@@ -4,6 +4,10 @@
     padding: 20px 40px;
     border-radius: 20px;
     background-color: #F6F6F6;
+@media screen and (min-width: 768px) {
+    width: 450px;
+    padding: 50px;
+}
 }
 .rating-modal--hidden{
     display: none;
@@ -16,6 +20,12 @@
     left: 297px;
     color: var(--secondFontColor);
     background-color: inherit;
+@media screen and (min-width: 768px) {
+    width: 28px;
+    height: 28px;
+    top: 14px;
+    left: 408px;
+}
 }
 .rating-modal__title{
     font-size: 12px;
@@ -30,6 +40,9 @@
     gap: 2px;
     margin: 8px 0px 20px;
     height: 24px;
+@media screen and (min-width: 768px) {
+    margin: 8px 0px 32px;
+}
 }
 .rating-modal__text {
     font-size: 12px;
@@ -50,4 +63,64 @@
 .rating-modal__label:hover,
 .rating-modal__label:hover~.rating-modal__label {
     fill: #EEA10C;
+}
+.rating-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+@media screen and (min-width: 768px) {
+    gap: 16px;  
+}
+}
+.rating-form__input,
+.rating-form__textarea{
+    height: 42px;
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(27, 27, 27, 0.6);
+    border-radius: 30px;
+    border: 1px solid rgba(27, 27, 27, 0.4);
+    outline: none;
+    transition: border var(--mainTransition) var(--mainTransitionTime);
+&:hover,
+&:focus{
+    border: 1px solid #1B1B1B;
+}
+@media screen and (min-width: 768px) {
+    height: 48px;
+    font-size: 16px;
+    line-height: 24px;
+}
+}
+.rating-form__textarea{
+    height: 93px;
+    border-radius: 15px;
+    resize: none;
+@media screen and (min-width: 768px) {
+    height: 106px;
+}
+}
+.rating-form__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--firstFontColor);
+    background-color: var(--accentColor);
+    border-radius: 30px;
+    transition: background-color var(--mainTransition) var(--mainTransitionTime);
+&:hover,
+&:focus{
+    background-color: var(--hoverBgColor);
+}
+@media screen and (min-width: 768px) {
+    height: 48px;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 16px;
+}
 }
