@@ -1,14 +1,12 @@
-import { checkedRatingInputs } from "./addToFavorite&GiveRating";
+import { addToFavoriteAndGiveRating, checkedRatingInputs } from "./addToFavorite&GiveRating";
 import { fetchSubtypeExercisesById } from "./api";
 import { createMarkupForSubtypeExercisesModal } from "./createMarkup";
 
 const backdrop = document.querySelector('.js-backdrop') as HTMLElement;
 const modal = document.querySelector('.modal') as HTMLElement;
 const subtypeExercisesList = document.querySelector('.js-subtype-exercises__list') as HTMLElement;
-const body = document.body;
+const body = document.querySelector('body') as HTMLElement;
 const ratingModal = document.querySelector('.js-rating-modal') as HTMLElement;
-const ratingText = document.querySelector('.js-rating-modal__text') as HTMLElement
-
 
 function openModal(evt: Event) {
     const target = evt.target as HTMLElement;
@@ -25,7 +23,19 @@ function openModal(evt: Event) {
         .catch(err => console.error('Error fetching subtype exercises:', err));
     showModal(true);
     checkedRatingInputs()
-    // ratingText.innerHTML = `0.0`
+}
+
+function backdropHandler(evt: Event) {
+    const target = evt.target as HTMLElement;
+
+    if (target.classList.contains('js-modal-favorite')) {
+        addToFavoriteAndGiveRating(evt);
+    }else if (target.classList.contains('js-modal-rating')) {
+        ratingModal.classList.remove('rating-modal--hidden')
+        modal.style.display = 'none'
+    }else if (target.classList.contains('js-backdrop') || target.classList.contains('js-modal-close') || target.classList.contains('js-rating-modal__close-btn')) {
+        closeModal(evt);
+    }
 }
 
 function closeModal(evt: Event) {
@@ -67,4 +77,4 @@ function showModal(show: boolean) {
 }
 
 subtypeExercisesList.addEventListener('click', openModal);
-backdrop.addEventListener('click', closeModal);
+backdrop.addEventListener('click', backdropHandler);
