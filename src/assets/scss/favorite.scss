@@ -1,0 +1,14 @@
+@import 'modern-normalize/modern-normalize.css';
+//common
+@import './common/container';
+@import './common/social-links';
+//utils
+@import './utils/nullstyles';
+@import './utils/variables';
+//components
+@import './components/header';
+@import './components/headerMobileMenu';
+@import './components/favoriteQuote.scss';
+@import './components/exercisesFavorite';
+@import './components/subtypeExercises';
+@import './components/subtypeModal'
