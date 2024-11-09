@@ -1,0 +1,34 @@
+<section class="favorite">
+  <div class="container">
+    <div class="favorite__container">
+      <h2 class="favorite__title">Favorites</h2>
+      <ul class="favorite-exercises__list js-favorite-exercises"></ul>
+      <div class="favorite-exercises__notfound js-favorite-exercises__notfound">
+        <picture>
+          <source
+            media="(min-width: 1440px) and (min-resolution: 2dppx)"
+            srcset="/img/desktop/dumbbell-desktop&tablet@2x.png"
+          />
+          <source
+            media="(min-width: 768px) and (min-resolution: 2dppx)"
+            srcset="/img/mobile/dumbbell-mobile@2x.png"
+          />
+          <source
+            media="(min-width: 1440px)"
+            srcset="/img/desktop/dumbbell-desktop&tablet@1x.png"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="/img/mobile/dumbbell-mobile@1x.png"
+          />
+          <img src="/img/mobile/dumbbell-mobile@1x.png" alt="dumbbell" />
+        </picture>
+        <p class="favorite-exercises__notfound-text">
+          It appears that you haven't added any exercises to your favorites yet.
+          To get started, you can add exercises that you like to your favorites
+          for easier access in the future.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
