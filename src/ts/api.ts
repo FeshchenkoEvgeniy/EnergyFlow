@@ -108,4 +108,15 @@ async function sendFeedbackExercisesById(id: string, email: string, feedbackText
     }
 }
 
-export {fetchQuote, fetchFilterExercises, fetchSubtypeExercises, fetchSubtypeExercisesById,subscriptionToNewExercises, sendFeedbackExercisesById}
+async function fetchExercisesById(exercisesId: string[]) {
+    const arrayOfPromises = exercisesId.map(async exerciseId => {
+    const response = await fetch(`${BASE_URL}/exercises/${exerciseId}`);
+    return response.json();
+    });
+    
+    const exercises = await Promise.all(arrayOfPromises);
+
+    return exercises
+}
+
+export {fetchQuote, fetchFilterExercises, fetchSubtypeExercises, fetchSubtypeExercisesById,subscriptionToNewExercises, sendFeedbackExercisesById, fetchExercisesById}
