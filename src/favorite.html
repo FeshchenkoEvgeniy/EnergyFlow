@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dist/notiflix-3.2.7.min.css" />
+    <link rel="stylesheet" href="./assets/scss/favorite.scss" />
+    <title>Energy Flow</title>
+  </head>
+  <body>
+    <load src="./assets/partials/favoriteHeader.html" />
+    <main>
+      <load src="./assets/partials/favoriteQuote.html" />
+      <load src="./assets/partials/favorite.html" />
+    </main>
+    <load src="./assets/partials/favoriteHeaderMobileMenu.html" />
+    <div class="backdrop backdrop--hidden js-backdrop">
+      <div class="modal js-modal"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/notiflix@3.2.5/dist/notiflix-aio-3.2.5.min.js"></script>
+    <script type="module" src="./ts/headerMobileMenu.ts"></script>
+    <script type="module" src="./ts/quote.ts"></script>
+    <script type="module" src="./ts/favorite.ts"></script>
+  </body>
+</html>
