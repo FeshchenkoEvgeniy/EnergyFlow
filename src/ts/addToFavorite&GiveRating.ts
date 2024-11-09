@@ -72,8 +72,7 @@ inputRatingElements.forEach(input => {
 });
 
 if (!ratingForm.hasAttribute('data-submit-listener')) {
-    ratingForm.addEventListener('submit', sendFeedback);
-    ratingForm.setAttribute('data-submit-listener', 'true');
-}
-
+ratingForm.addEventListener('submit', sendFeedback);
+ratingForm.setAttribute('data-submit-listener', 'true');
+} 
 
