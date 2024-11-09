@@ -1,0 +1,195 @@
+.favorite-quote {
+    margin-bottom: 20px;
+    @media screen and (min-width: 768px) {
+        margin-bottom: 16px;
+    }
+}
+
+.favorite-quote__wrapper{
+    @media screen and (min-width: 1440px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.quote__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 272px;
+    padding: 40px 20px;
+    border-radius: 30px;
+    background-color: var(--accentColor);
+
+    @media screen and (min-width: 768px) {
+        height: 302px;
+        padding: 64px 80px;
+        border-radius: 50px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        padding: 64px;
+        width: 704px;
+    }
+}
+
+.quote__icon--wrap {
+    display: flex;
+    align-items: center;
+}
+
+.quote__man {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 32px;
+    padding: 6px 7px;
+    border-radius: 100px;
+    background-color: rgba(246, 246, 246, 0.1);
+}
+
+.quote__title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    margin-left: 12px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 24px;
+        line-height: 32px;
+        margin-left: 16px;
+    }
+}
+
+.quote__inverted-qoutes--icon {
+    position: absolute;
+    top: 40px;
+    left: 287px;
+    width: 28px;
+    height: 28px;
+
+    @media screen and (min-width: 768px) {
+        top: 32px;
+        left: 608px;
+        width: 48px;
+        height: 48px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        top: 32px;
+        left: 592px;
+    }
+}
+
+.quote__man--icon {
+    width: 18px;
+    height: 20px;
+}
+
+.quote__text {
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(246, 246, 246, 0.6);
+    margin: 14px 0;
+    padding-left: 44px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 16px;
+        line-height: 24px;
+        padding-left: 50px;
+        margin: 16px 0px 25px;
+    }
+}
+
+.quote__author {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    padding-left: 44px;
+
+    @media screen and (min-width: 768px) {
+        padding-left: 50px;
+    }
+}
+
+.quote__bg--img {
+    background-image: url('/img/mobile/favortie-quote-mobile@1x.png');
+    width: 335px;
+    height: 272px;
+
+@media screen and (min-width: 1px) {
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+        background-image: url('/img/mobile/favortie-quote-mobile@2x.png');
+        background-size: contain;
+    }
+}
+@media screen and (min-width: 768px){
+    background-image: url('/img/tablet/favorite-quote-tablet@1x.png');
+    width: 368px;
+    height: 302px;
+@media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+        background-image: url('/img/tablet/favorite-quote-tablet@2x.png');
+    }
+}
+@media screen and (min-width: 1440px) {
+    background-image: url('/img/desktop/favorite-quote-desktop@1x.png');
+    width: 352px;
+@media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+        background-image: url('/img/desktop/favorite-quote-desktop@2x.png');
+}
+}
+}
+.favorite-wrapper{
+@media screen and (min-width: 768px) {
+    margin-top: 20px;
+    display: flex;
+}
+@media screen and (min-width: 1440px) {
+    margin-top: 0;
+}
+}
+.recommendations__container{
+    width: 335px;
+    height: 272px;
+    padding: 96px 101px;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+@media screen and (min-width: 768px) {
+    width: 368px;
+    height: 302px;
+    padding: 106px 118px;
+    border-radius: 50px;
+}
+@media screen and (min-width: 1440px) {
+    width: 352px;
+    padding: 106px 110px;
+}
+}
+.recommendations__dumbbell--icon{
+    width: 20px;
+    height: 20px;
+    margin-bottom: 15px;
+    fill: #1B1B1B;
+}
+.recommendations__title{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--secondFontColor);
+}
+.recommendations__pretitle{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: rgba(27, 27, 27, 0.6);
+}
